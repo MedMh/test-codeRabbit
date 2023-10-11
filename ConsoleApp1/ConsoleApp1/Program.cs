@@ -2,7 +2,6 @@
 
 Console.WriteLine("Hello, World!");
 CalculateFactorial(5);
-IsPalindrome("radar");
 SumOfEvenNumbers(new[] { 1, 2, 3, 4, 5, 6 });
 
 
@@ -19,22 +18,7 @@ static int CalculateFactorial(int n)
         {
             result *= i;
         }
-        return result;
-    }
-}
-
-bool IsPalindrome(string input)
-{
-    string cleanInput = input.Replace(" ", "").ToLower();
-    string reversedInput = new string(cleanInput.Reverse().ToArray());
-
-    if (cleanInput == reversedInput)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
+        return 0;
     }
 }
 
