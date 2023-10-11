@@ -2,7 +2,6 @@
 
 Console.WriteLine("Hello, World!");
 CalculateFactorial(5);
-IsPalindrome("radar");
 SumOfEvenNumbers(new[] { 1, 2, 3, 4, 5, 6 });
 
 
@@ -19,23 +18,31 @@ static int CalculateFactorial(int n)
         {
             result *= i;
         }
-        return result;
+        return 0;
     }
 }
 
-bool IsPalindrome(string input)
+var accounts = new List<Account>
 {
-    string cleanInput = input.Replace(" ", "").ToLower();
-    string reversedInput = new string(cleanInput.Reverse().ToArray());
+    new SavingsAccount(101, "Alice", 1000, 0.05m),
+    new Account(102, "Bob", 1500)
+};
 
-    if (cleanInput == reversedInput)
+foreach (var account in accounts)
+{
+    Console.WriteLine(account);
+    account.Deposit(500);
+    Console.WriteLine($"After deposit: {account}");
+    account.Withdraw(200);
+    Console.WriteLine($"After withdrawal: {account}");
+
+    if (account is SavingsAccount savingsAccount)
     {
-        return true;
+        savingsAccount.ApplyInterest();
+        Console.WriteLine($"After interest applied: {account}");
     }
-    else
-    {
-        return false;
-    }
+
+    Console.WriteLine();
 }
 
 int SumOfEvenNumbers(int[] numbers)
