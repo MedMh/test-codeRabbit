@@ -38,6 +38,29 @@ bool IsPalindrome(string input)
     }
 }
 
+var accounts = new List<Account>
+{
+    new SavingsAccount(101, "Alice", 1000, 0.05m),
+    new Account(102, "Bob", 1500)
+};
+
+foreach (var account in accounts)
+{
+    Console.WriteLine(account);
+    account.Deposit(500);
+    Console.WriteLine($"After deposit: {account}");
+    account.Withdraw(200);
+    Console.WriteLine($"After withdrawal: {account}");
+
+    if (account is SavingsAccount savingsAccount)
+    {
+        savingsAccount.ApplyInterest();
+        Console.WriteLine($"After interest applied: {account}");
+    }
+
+    Console.WriteLine();
+}
+
 int SumOfEvenNumbers(int[] numbers)
 {
     int sum = 0;
