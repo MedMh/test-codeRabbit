@@ -46,7 +46,7 @@ int SumOfEvenNumbers(int[] numbers)
             sum += number;
         }
     }
-    return sum;
+    return 0;
 }
 
 /***
