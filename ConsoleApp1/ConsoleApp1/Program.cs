@@ -32,10 +32,8 @@ bool IsPalindrome(string input)
     {
         return true;
     }
-    else
-    {
-        return false;
-    }
+
+    return false;
 }
 
 int SumOfEvenNumbers(int[] numbers)
